@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './Skills.css';
+import { title } from 'framer-motion/client';
+import { IoLanguageSharp } from "react-icons/io5";
 
 const SKILLS = [
   { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
@@ -42,6 +44,11 @@ const SKILL_SETS = [
     items: ["Team Collaboration", "Problem Solving", "Adaptability", "Quick Learning"],
     icon: "🤝"
   },
+  {
+    title :  "Languages",
+    items : ["Python" , "C++" , "C" , "Java"],
+    icon : <IoLanguageSharp />
+  }
 ];
 
 export default function Skills() {
@@ -95,7 +102,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="skills-section text-white relative cursor-none">
+    <section id="skills" className="skills-section  text-white relative cursor-none">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -115,7 +122,7 @@ export default function Skills() {
 
       {/* Title Section */}
       <motion.div
-        className="text-center mb-14 relative z-10"
+        className="text-center mb-14 relative z-10 py-10"
         initial={{ opacity: 0, y: 30, rotateX: -90 }}
         whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
         transition={{ duration: 0.8, type: "spring" }}

@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#050505] to-[#0a0a0a] text-white py-16 px-6 relative overflow-hidden cursor-none"
+      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-[#050505] to-[#0a0a0a] text-white py-18 px-6 relative overflow-hidden cursor-none"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
+import { IoLogoVercel } from "react-icons/io5";
 
 const links = [
     { label: "Home", to: "/", icon: "🏠" },
@@ -299,7 +300,7 @@ export default function Navbar() {
                         }}
                     >
                         {/* Mobile Menu Header */}
-                        <div className="p-6 border-b border-gray-800">
+                        <div className="py-20 border-b border-gray-800">
                             <motion.div
                                 animate={{ 
                                     rotate: [0, 10, -10, 0],
@@ -333,7 +334,7 @@ export default function Navbar() {
                                         to={l.to}
                                         end
                                         className={({ isActive }) => 
-                                            `flex items-center gap-4 p-4 rounded-xl transition-all duration-300 mb-3 cursor-none ${
+                                            `flex items-center gap-4 p-2 rounded-xl transition-all duration-300 mb-3 cursor-none ${
                                                 isActive 
                                                     ? 'bg-cyan-400/10 border border-cyan-400/30 text-cyan-400' 
                                                     : 'text-gray-300 hover:bg-white/5 hover:text-white'

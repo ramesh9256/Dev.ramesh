@@ -6,7 +6,7 @@ const experiences = [
     company: "Flookup Capital Advisor Pvt Ltd",
     role: "MERN Stack Developer",
     location: "Jaipur",
-    period: "2025 — Present",
+    period: " Oct 2025 — Present",
     type: "Full-Time",
     isCurrent: true,
   },
@@ -14,7 +14,7 @@ const experiences = [
     company: "Delain Technology Pvt Ltd",
     role: "Full Stack Developer (Intern)",
     location: "Hisar",
-    period: "2024",
+    period: "May 2025 - August 2025",
     type: "Internship",
     isCurrent: false,
   },
@@ -23,7 +23,7 @@ const experiences = [
 export default function Experience() {
   return (
     <section
-      className="min-h-screen py-16 px-6 relative overflow-hidden cursor-none"
+      className="min-h-screen py-20 px-6 relative overflow-hidden cursor-none"
       style={{
         background: "#080808",
         color: "white",

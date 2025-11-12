@@ -116,7 +116,7 @@ export default function About() {
                     {[
                         {
                             title: "Location",
-                            content: "Jaipur, India 🇮🇳",
+                            content: "Jaipur",
                             icon: "📍",
                             delay: 1.0
                         },

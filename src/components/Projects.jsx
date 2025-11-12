@@ -59,7 +59,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen py-16 px-6 md:px-12 relative overflow-hidden cursor-none"
+      className="min-h-screen py-21 px-10 md:px-18 relative overflow-hidden cursor-none"
       style={{
         background: "linear-gradient(to bottom, #050505, #0a0a0a)",
         color: "white",

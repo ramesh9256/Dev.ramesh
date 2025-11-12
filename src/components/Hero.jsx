@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Hero() {
     return (
         <section
-            className="min-h-screen flex flex-col justify-center items-center text-center
+            className="min-h-screen py-20 md:py-20 flex flex-col justify-center items-center text-center
                        bg-gradient-to-b from-[#050505] to-[#0a0a0a] text-white px-6 relative overflow-hidden cursor-none"
             id="home"
         >
@@ -117,18 +117,16 @@ export default function Hero() {
                     transition={{ delay: 1.1, duration: 1 }}
                 >
                     {[
-                        "1+ Year Experience",
+                        
                         "Open to Opportunities 🚀",
                         "Full Stack & API Development"
                     ].map((text, index) => (
                         <motion.div
                             key={index}
                             whileHover={{ 
-                                scale: 1.1,
-                                rotateY: 180,
-                                backgroundColor: "rgba(0,255,200,0.2)"
+                                scale:1.1,
                             }}
-                            transition={{ duration: 0.3 }}
+                            transition={{ duration:0.5}}
                             className="border border-cyan-400/50 rounded-full px-6 py-3 text-gray-300 text-sm cursor-pointer"
                         >
                             {text}
