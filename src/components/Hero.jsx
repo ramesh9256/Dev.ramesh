@@ -92,7 +92,7 @@ export default function Hero() {
                     {[
                         { icon: FaEnvelope, text: "9256.ramesh@gmail.com", label: "Email" },
                         { icon: FaPhone, text: "+91 9256746259", label: "Phone" },
-                        { icon: FaMapMarkerAlt, text: "Jaipur, India 🇮🇳", label: "Location" }
+                        { icon: FaMapMarkerAlt, text: "Jaipur", label: "Location" }
                     ].map((item, index) => (
                         <motion.div
                             key={index}
