@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 import { IoLogoVercel } from "react-icons/io5";
+import Resume from '../../public/Resume.pdf'
 
 const links = [
     { label: "Home", to: "/", icon: "🏠" },
@@ -246,7 +247,7 @@ export default function Navbar() {
                     <div className="hidden lg:flex items-center gap-2 sm:gap-4">
                         {/* Resume Download Button */}
                         <motion.a
-                            href="/resume.pdf"
+                            href={Resume}
                             download
                             className="bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-2 sm:px-4 py-2 rounded-lg font-semibold flex items-center gap-1 sm:gap-2 text-xs sm:text-sm hover:shadow-lg hover:shadow-cyan-400/50 transition-all duration-300 cursor-pointer btn-hover"
                             whileHover={{ 
@@ -415,7 +416,7 @@ export default function Navbar() {
                                 ))}
                             </div>
                             <motion.a
-                                href="/resume.pdf"
+                                href={Resume}
                                 download
                                 className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black py-2 sm:py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-400/50 transition-all duration-300 cursor-pointer btn-hover text-sm sm:text-base"
                                 whileHover={{ 

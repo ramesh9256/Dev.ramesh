@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaDownload } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Resume from '../../public/Resume.pdf'
 
 export default function Hero() {
     return (
@@ -142,7 +143,7 @@ export default function Hero() {
                     transition={{ delay: 1.3, duration: 0.5, type: "spring" }}
                 >
                     <motion.a
-                        href="/resume.pdf"
+                        href={Resume}
                         download
                         className="bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-8 py-4 rounded-xl font-semibold flex items-center justify-center gap-3 hover:shadow-2xl hover:shadow-cyan-400/50 transition-all duration-300 cursor-pointer btn-hover"
                         whileHover={{ scale: 1.05, rotateX: 10 }}
