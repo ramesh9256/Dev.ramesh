@@ -56,11 +56,7 @@ export const LogoComponent = ({ size = "default", animated = true }) => {
             
             {/* Logo container with proper padding */}
             <div className={`relative z-10 ${paddingClasses[size]}`}>
-                <img 
-                    src={Logo} 
-                    alt="Ramesh Kumar" 
-                    className="w-full h-full object-contain filter brightness-110 contrast-110 drop-shadow-md"
-                />
+                <span>RK</span>
             </div>
             
             {/* Animated shine effect */}
@@ -155,11 +151,7 @@ export const GlassLogoComponent = ({ size = "default", animated = true }) => {
             {...logoProps}
             className={`${sizeClasses[size]} bg-white/5 backdrop-blur-md border border-cyan-400/30 rounded-xl sm:rounded-2xl flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-300`}
         >
-            <img 
-                src={Logo} 
-                alt="Ramesh Kumar" 
-                className="w-full h-full object-contain p-1.5"
-            />
+            <span>RK</span>
         </LogoWrapper>
     );
 };
