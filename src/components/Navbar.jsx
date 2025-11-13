@@ -4,6 +4,9 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaGithub, FaLinkedin, FaDownload } from 'react-icons/fa';
 import { IoLogoVercel } from "react-icons/io5";
 import Resume from '../../public/Resume.pdf'
+import Logo from '../../public/logo.jpg'
+import { LogoComponent, MinimalLogoComponent, GlassLogoComponent } from './LogoComponent';
+
 
 const links = [
     { label: "Home", to: "/", icon: "🏠" },
@@ -38,10 +41,10 @@ export default function Navbar() {
                 setIsMobileMenuOpen(false);
             }
         };
-        
+
         window.addEventListener('resize', handleResize);
         handleResize(); // Set initial width
-        
+
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
@@ -76,13 +79,13 @@ export default function Navbar() {
 
     // Link item variants for mobile menu
     const linkVariants = {
-        hidden: { 
-            opacity: 0, 
+        hidden: {
+            opacity: 0,
             x: 50,
             rotateY: 90
         },
         visible: (i) => ({
-            opacity: 1, 
+            opacity: 1,
             x: 0,
             rotateY: 0,
             transition: {
@@ -107,20 +110,19 @@ export default function Navbar() {
             <motion.nav
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isLoaded ? 1 : 0 }}
-                transition={{ 
-                    type: "spring", 
-                    stiffness: 100, 
+                transition={{
+                    type: "spring",
+                    stiffness: 100,
                     damping: 20,
                     duration: 0.8
                 }}
-                className={`fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 py-3 sm:py-4 transition-all duration-500 cursor-none ${
-                    isScrolled 
-                        ? 'bg-black/90 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20' 
-                        : 'bg-black/80 backdrop-blur-lg border-b border-white/10'
-                }`}
+                className={`fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 py-3 sm:py-4 transition-all duration-500 cursor-none ${isScrolled
+                    ? 'bg-black/90 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20'
+                    : 'bg-black/80 backdrop-blur-lg border-b border-white/10'
+                    }`}
                 style={{
-                    background: isScrolled 
-                        ? 'rgba(0,0,0,0.9)' 
+                    background: isScrolled
+                        ? 'rgba(0,0,0,0.9)'
                         : 'rgba(0,0,0,0.8)',
                     backdropFilter: 'blur(20px)',
                     borderBottom: isScrolled ? '1px solid rgba(0,255,200,0.3)' : '1px solid rgba(255,255,255,0.1)',
@@ -134,34 +136,17 @@ export default function Navbar() {
                         className="flex items-center gap-2 sm:gap-3"
                         whileHover={{ scale: 1.1 }}
                     >
-                        <motion.div
-                            animate={{ 
-                                rotate: [0, 360],
-                                scale: [1, 1.1, 1]
-                            }}
-                            transition={{ 
-                                duration: 20, 
-                                repeat: Infinity, 
-                                ease: "linear" 
-                            }}
-                            whileHover={{ 
-                                rotate: 180,
-                                scale: 1.2,
-                            }}
-                            className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center cursor-pointer"
-                        >
-                            <span className="text-black font-bold text-sm sm:text-xl">RK</span>
-                        </motion.div>
+                        <LogoComponent size="default" animated={true} />
                         <motion.h2
                             className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent cursor-pointer"
-                            whileHover={{ 
+                            whileHover={{
                                 scale: 1.05,
                                 textShadow: "0 0 30px rgba(0,255,200,0.8)"
                             }}
                             transition={{ duration: 0.3 }}
                         >
-                            <span className="hidden sm:inline">Ramesh Kumar</span>
-                            <span className="sm:hidden">RK</span>
+                            <span className="sm:inline">Ramesh Kumar</span>
+
                         </motion.h2>
                     </motion.div>
 
@@ -172,9 +157,8 @@ export default function Navbar() {
                                 key={l.to}
                                 to={l.to}
                                 end
-                                className={({ isActive }) => 
-                                    `relative group font-medium transition-all duration-300 cursor-none ${
-                                        isActive ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
+                                className={({ isActive }) =>
+                                    `relative group font-medium transition-all duration-300 cursor-none ${isActive ? 'text-cyan-400' : 'text-gray-300 hover:text-white'
                                     }`
                                 }
                             >
@@ -182,7 +166,7 @@ export default function Navbar() {
                                     <motion.div
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
-                                        transition={{ 
+                                        transition={{
                                             delay: index * 0.1,
                                             type: "spring"
                                         }}
@@ -199,8 +183,8 @@ export default function Navbar() {
                                         >
                                             <motion.span
                                                 animate={{ rotate: [0, 10, -10, 0] }}
-                                                transition={{ 
-                                                    duration: 2, 
+                                                transition={{
+                                                    duration: 2,
                                                     repeat: Infinity,
                                                     delay: index * 0.2
                                                 }}
@@ -210,30 +194,29 @@ export default function Navbar() {
                                             </motion.span>
                                             <span className="hidden sm:inline">{l.label}</span>
                                         </motion.span>
-                                        
+
                                         {/* Animated underline */}
                                         <motion.div
-                                            className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 ${
-                                                isActive ? 'w-full' : 'w-0'
-                                            }`}
+                                            className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 ${isActive ? 'w-full' : 'w-0'
+                                                }`}
                                             initial={false}
-                                            animate={{ 
-                                                width: isActive ? '100%' : isHovered ? '100%' : '0%' 
+                                            animate={{
+                                                width: isActive ? '100%' : isHovered ? '100%' : '0%'
                                             }}
                                             transition={{ duration: 0.3 }}
                                         />
-                                        
+
                                         {/* Hover glow effect */}
                                         {isActive && (
                                             <motion.div
                                                 className="absolute inset-0 bg-cyan-400/10 rounded-lg blur-xl"
-                                                animate={{ 
+                                                animate={{
                                                     scale: [1, 1.2, 1],
                                                     opacity: [0.5, 0.8, 0.5]
                                                 }}
-                                                transition={{ 
-                                                    duration: 2, 
-                                                    repeat: Infinity 
+                                                transition={{
+                                                    duration: 2,
+                                                    repeat: Infinity
                                                 }}
                                             />
                                         )}
@@ -250,8 +233,8 @@ export default function Navbar() {
                             href={Resume}
                             download
                             className="bg-gradient-to-r from-cyan-400 to-blue-500 text-black px-2 sm:px-4 py-2 rounded-lg font-semibold flex items-center gap-1 sm:gap-2 text-xs sm:text-sm hover:shadow-lg hover:shadow-cyan-400/50 transition-all duration-300 cursor-pointer btn-hover"
-                            whileHover={{ 
-                                scale: 1.05, 
+                            whileHover={{
+                                scale: 1.05,
                                 rotateX: 10,
                                 boxShadow: "0 10px 30px rgba(0,255,200,0.4)"
                             }}
@@ -273,8 +256,8 @@ export default function Navbar() {
                                     target="_blank"
                                     rel="noreferrer"
                                     className={`text-cyan-400 ${social.color} transition-all duration-300 cursor-pointer`}
-                                    whileHover={{ 
-                                        scale: 1.3, 
+                                    whileHover={{
+                                        scale: 1.3,
                                         rotateY: 360,
                                         textShadow: "0 0 20px rgba(0,255,200,0.8)"
                                     }}
@@ -334,19 +317,7 @@ export default function Navbar() {
                     >
                         {/* Mobile Menu Header */}
                         <div className="p-16 sm:p-6 border-b border-gray-800">
-                            <motion.div
-                                animate={{ 
-                                    rotate: [0, 10, -10, 0],
-                                    scale: [1, 1.05, 1]
-                                }}
-                                transition={{ 
-                                    duration: 3, 
-                                    repeat: Infinity 
-                                }}
-                                className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 cursor-pointer"
-                            >
-                                <span className="text-black font-bold text-lg sm:text-2xl">RK</span>
-                            </motion.div>
+                            <LogoComponent size="default" animated={true} />
                             <h3 className="text-lg sm:text-xl font-bold text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                                 Ramesh Kumar
                             </h3>
@@ -366,18 +337,17 @@ export default function Navbar() {
                                     <NavLink
                                         to={l.to}
                                         end
-                                        className={({ isActive }) => 
-                                            `flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl transition-all duration-300 mb-2 sm:mb-3 cursor-none ${
-                                                isActive 
-                                                    ? 'bg-cyan-400/10 border border-cyan-400/30 text-cyan-400' 
-                                                    : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                                        className={({ isActive }) =>
+                                            `flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl transition-all duration-300 mb-2 sm:mb-3 cursor-none ${isActive
+                                                ? 'bg-cyan-400/10 border border-cyan-400/30 text-cyan-400'
+                                                : 'text-gray-300 hover:bg-white/5 hover:text-white'
                                             }`
                                         }
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         <motion.span
                                             className="text-xl sm:text-2xl cursor-pointer"
-                                            whileHover={{ 
+                                            whileHover={{
                                                 scale: 1.2,
                                                 rotate: [0, 10, -10, 0]
                                             }}
@@ -404,8 +374,8 @@ export default function Navbar() {
                                         target="_blank"
                                         rel="noreferrer"
                                         className="w-10 h-10 sm:w-12 sm:h-12 bg-cyan-400/10 border border-cyan-400/30 rounded-xl flex items-center justify-center text-cyan-400 cursor-pointer"
-                                        whileHover={{ 
-                                            scale: 1.2, 
+                                        whileHover={{
+                                            scale: 1.2,
                                             rotateY: 360,
                                             backgroundColor: "rgba(0,255,200,0.2)"
                                         }}
@@ -419,7 +389,7 @@ export default function Navbar() {
                                 href={Resume}
                                 download
                                 className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-black py-2 sm:py-3 rounded-xl font-semibold flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-cyan-400/50 transition-all duration-300 cursor-pointer btn-hover text-sm sm:text-base"
-                                whileHover={{ 
+                                whileHover={{
                                     scale: 1.02,
                                     boxShadow: "0 10px 30px rgba(0,255,200,0.4)"
                                 }}
